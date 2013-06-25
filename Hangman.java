@@ -81,7 +81,7 @@ public class Hangman extends ConsoleProgram {
     				println("The guess is correct");
     				}
     				///making the string guessed to be equal to you part of the guessed word so far ex:__A_B
-/*most imp*/    	if(l==(str.length()-1))  guessed=guessed.substring(0,l)+a;    //taking into consideration if word to replace is last word in the string
+/*most important*/    	if(l==(str.length()-1))  guessed=guessed.substring(0,l)+a;    //taking into consideration if word to replace is last word in the string
     				else guessed=guessed.substring(0,l)+a+guessed.substring(l+1);
 
     				
