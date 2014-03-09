@@ -35,22 +35,22 @@ public class Hangman extends ConsoleProgram {
   
 //  selecting a random word from the hangman lexicon
     private void selectarandomwordfromthelexicon(){ 
-    	h=new HangmanLexicon();//  HangmanLexicon h=new HangmanLexicon();    can declare it here also
+    	h             =   new HangmanLexicon();//  HangmanLexicon h=new HangmanLexicon();    can declare it here also
     	h.addingwordsfromfile();
-    	int arreysize=h.sizeofarraylist();
-	int y=rgen.nextInt(0,arreysize-1);
+    	int arreysize =   h.sizeofarraylist();
+	int y         =   rgen.nextInt(0,arreysize-1);
 	println(y);
-	str=(h.getWord(y));
+	str           =   (h.getWord(y));
 	println(str);
     }
    
     
     private void hashingtheselectedword(){
-    	hash="";
-    	guessed="";
+    	hash     = "";
+    	guessed  = "";
      for(int i=0;i<str.length();i++){
-    	 guessed+="_";                      ///creating string to overwrite whose length is equal to hash
-    	 hash+="_ ";
+    	 guessed  += "_";                      ///creating string to overwrite whose length is equal to hash
+    	 hash     += "_ ";
      }
      println("The World Looks Like this:"+ hash);
    
@@ -66,17 +66,17 @@ public class Hangman extends ConsoleProgram {
     		//else canvas.noteIncorrectGuess(a,i)
     		println("\nYou have "+ i +" guesses left");
     		
-    		String forChar=readLine("Enter Your Guess: ");
-    		forChar=forChar.toUpperCase();  ///converts nterd string to upper case
-    		a=forChar.charAt(0);      //selects the character and stores it to char type
-    		int m=0;      //we need to print line /the guess is correct only once //hence we use this flag
+    		String forChar  = readLine("Enter Your Guess: ");
+    		forChar         = forChar.toUpperCase();  ///converts nterd string to upper case
+    		a               = forChar.charAt(0);      //selects the character and stores it to char type
+    		int m           = 0;      //we need to print line /the guess is correct only once //hence we use this flag
     		for(int l=0;l<str.length();l++)   ///compares entered alphabet to each individual character of string
     		{
-    			if(a==str.charAt(l))
+    			if(a == str.charAt(l))
     			{
-    				if(m==0)
+    				if(m == 0)
     				{
-    				m=1;
+    				m = 1;
     				i++;
     				println("The guess is correct");
     				}
